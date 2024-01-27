@@ -9,8 +9,10 @@ class Manager {
     public:
         inline static bool firstTimeOpen;
         inline static std::vector<int> userIDList;
+        inline static std::vector<int> userIDListDemons;
+        inline static std::vector<int> userIDListMoons;
 
-        inline static void parseRequestString(std::string str) {
+        inline static void parseRequestString(std::string str, std::vector<int> &list) {
 
             size_t isFound = str.find("|");
 
@@ -22,7 +24,7 @@ class Manager {
 
                 try {
                     int userID = stoi(str.substr(0, str.find(":")));
-                    userIDList.push_back(userID);
+                    list.push_back(userID);
                 } catch (std::invalid_argument) {
                     break;
                 }
@@ -38,6 +40,24 @@ class Manager {
         inline static int getPosition(int id) {
             for (unsigned int i = 0; i < userIDList.size(); i++) {
                 if (userIDList.at(i) == id) {
+                    return i + 1;
+                }
+            }
+            return -1;
+        }
+
+        inline static int getPositionDemons(int id) {
+            for (unsigned int i = 0; i < userIDListDemons.size(); i++) {
+                if (userIDListDemons.at(i) == id) {
+                    return i + 1;
+                }
+            }
+            return -1;
+        }
+
+        inline static int getPositionMoons(int id) {
+            for (unsigned int i = 0; i < userIDListMoons.size(); i++) {
+                if (userIDListMoons.at(i) == id) {
                     return i + 1;
                 }
             }

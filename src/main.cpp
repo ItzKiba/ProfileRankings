@@ -22,13 +22,31 @@ class $modify(MenuLayer) {
         .text()
         .then([this](const std::string& response) {
 
-			Manager::parseRequestString(response);
+			Manager::parseRequestString(response, Manager::userIDList);
 
-        }).expect([](std::string const& error) {
-		
-			
+        });
 
-		});
+		web::AsyncWebRequest()
+        .postRequest()
+        .bodyRaw(fmt::format("type={}", "moons"))
+        .fetch("https://clarifygdps.com/gdutils/moreleaderboards.php")
+        .text()
+        .then([this](const std::string& response) {
+
+			Manager::parseRequestString(response, Manager::userIDListMoons);
+
+        });
+
+		web::AsyncWebRequest()
+        .postRequest()
+        .bodyRaw(fmt::format("type={}", "demons"))
+        .fetch("https://clarifygdps.com/gdutils/moreleaderboards.php")
+        .text()
+        .then([this](const std::string& response) {
+
+			Manager::parseRequestString(response, Manager::userIDListDemons);
+
+        });
 
 		Manager::firstTimeOpen = true;
 

@@ -82,7 +82,7 @@ class Particles {
             dict->setObject(CCString::create("1"), "startColorRed");
             dict->setObject(CCString::create("1"), "startColorGreen");
             dict->setObject(CCString::create("1"), "startColorBlue");
-            dict->setObject(CCString::create("0.7"), "startColorAlpha");
+            dict->setObject(CCString::create("0.5"), "startColorAlpha");
             dict->setObject(CCString::create("0.6"), "startColorVarianceRed");
             dict->setObject(CCString::create("0.6"), "startColorVarianceBlue");
             dict->setObject(CCString::create("0.6"), "startColorVarianceGreen");
