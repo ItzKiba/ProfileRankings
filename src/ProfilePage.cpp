@@ -7,6 +7,11 @@
 using namespace geode::prelude;
 
 class $modify(ERProfilePage, ProfilePage) {
+
+    static void onModify(auto &self) {
+        self.setHookPriority("ProfilePage::loadPageFromUserInfo", -1);
+    }
+
     bool m_hasBeenOpened = false;
     
     ccColor3B m_cColor = {0, 0, 0};
@@ -673,10 +678,11 @@ class $modify(ERProfilePage, ProfilePage) {
         
         if (globalExists || moonsExists) {
             auto btn = static_cast<CCMenuItemSpriteExtra*>(this->m_mainLayer->getChildByID("main-menu")->getChildByID("cvolton.betterinfo/leaderboard-button"));
-            if (btn != nullptr) { 
-                auto menuSize = this->m_mainLayer->getChildByID("main-menu")->getContentSize();
-                btn->setPosition({menuSize.width * 0.0293f, menuSize.height * -0.40625f});
-                btn->setScale(btn->getScale() * 0.8f);
+            if (btn != nullptr) {
+                btn->removeFromParent();
+                auto leftMenu = this->m_mainLayer->getChildByID("left-menu");
+                leftMenu->addChild(btn);
+                leftMenu->updateLayout();
             }
         }
 
