@@ -319,6 +319,14 @@ class $modify(ERProfilePage, ProfilePage) {
             this->m_mainLayer->getChildByID("my-stuff-hint")->setVisible(false);
         }
         
+        auto btn = typeinfo_cast<CCMenuItemSpriteExtra*>(this->m_mainLayer->getChildByIDRecursive("cvolton.betterinfo/leaderboard-button"));
+        if (btn != nullptr) {
+            btn->removeFromParent();
+            auto leftMenu = this->m_mainLayer->getChildByID("left-menu");
+            leftMenu->addChild(btn);
+            leftMenu->updateLayout();
+        }
+
         if (m_fields->m_hasBeenOpened) {
             return;
         }
@@ -671,19 +679,6 @@ class $modify(ERProfilePage, ProfilePage) {
             moonBG->setScale(0.3f);
 
             layer->addChild(moonBG);
-        }
-
-
-
-        
-        if (globalExists || moonsExists) {
-            auto btn = static_cast<CCMenuItemSpriteExtra*>(this->m_mainLayer->getChildByID("main-menu")->getChildByID("cvolton.betterinfo/leaderboard-button"));
-            if (btn != nullptr) {
-                btn->removeFromParent();
-                auto leftMenu = this->m_mainLayer->getChildByID("left-menu");
-                leftMenu->addChild(btn);
-                leftMenu->updateLayout();
-            }
         }
 
         if (!demonsExists && creatorExists) {
