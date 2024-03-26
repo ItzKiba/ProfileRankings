@@ -6,6 +6,7 @@
 	"name": "Profile Rankings",
 	"developer": "ItzKiba",
 	"description": "Adds Creator Rank to profile pages and makes rankings look nicer.",
+	"repository": "https://github.com/ItzKiba/ProfileRankings",
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
