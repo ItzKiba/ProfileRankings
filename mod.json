@@ -19,5 +19,6 @@
 				"resources/*.png"
 			]
 		}
-	}
+	},
+	"repository": "https://github.com/ItzKiba/ProfileRankings"
 }
