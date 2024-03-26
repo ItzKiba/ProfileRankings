@@ -360,7 +360,7 @@ class $modify(ERProfilePage, ProfilePage) {
             
             creatorBG->setContentSize(labelSize);
             creatorBG->setZOrder(9);
-            creatorBG->setPosition({rightLabelX, layerSize.height * 0.830f});
+            creatorBG->setPosition({rightLabelX, layerSize.height * 0.845f});
             creatorBG->setOpacity(60);
             creatorBG->setID("creator-rank-tab"_spr);
             auto creatorBGScale = creatorBG->getContentSize();
@@ -427,7 +427,7 @@ class $modify(ERProfilePage, ProfilePage) {
             crCP->setScale(0.55f);
             crCP->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.65f});
 
-            creatorBG->setScale(0.35f);
+            creatorBG->setScale(0.3f);
             layer->addChild(creatorBG);
 
         }
@@ -441,7 +441,7 @@ class $modify(ERProfilePage, ProfilePage) {
             
             globalBG->setContentSize(labelSize);
             globalBG->setZOrder(9);
-            globalBG->setPosition({leftLabelX, layerSize.height * 0.895f});
+            globalBG->setPosition({leftLabelX, layerSize.height * 0.9f});
             globalBG->setOpacity(60);
             globalBG->setID("global-rank-tab"_spr);
             auto globalBGScale = globalBG->getContentSize();
@@ -507,7 +507,7 @@ class $modify(ERProfilePage, ProfilePage) {
             }
 
 
-            globalBG->setScale(0.35f);
+            globalBG->setScale(0.3f);
 
             layer->addChild(globalBG);
         }
@@ -522,7 +522,7 @@ class $modify(ERProfilePage, ProfilePage) {
             
             demonBG->setContentSize(labelSize);
             demonBG->setZOrder(9);
-            demonBG->setPosition({rightLabelX, layerSize.height * 0.895f});
+            demonBG->setPosition({rightLabelX, layerSize.height * 0.9f});
             demonBG->setOpacity(60);
             demonBG->setID("demon-rank-tab"_spr);
             auto demonBGScale = demonBG->getContentSize();
@@ -588,7 +588,7 @@ class $modify(ERProfilePage, ProfilePage) {
             drDM->setScale(0.55f);
             drDM->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.65f});
 
-            demonBG->setScale(0.35f);
+            demonBG->setScale(0.3f);
             layer->addChild(demonBG);
 
         }
@@ -602,9 +602,9 @@ class $modify(ERProfilePage, ProfilePage) {
             
             moonBG->setContentSize(labelSize);
             moonBG->setZOrder(9);
-            moonBG->setPosition({leftLabelX, layerSize.height * 0.830f});
+            moonBG->setPosition({leftLabelX, layerSize.height * 0.845f});
             moonBG->setOpacity(60);
-            moonBG->setID("global-rank-tab"_spr);
+            moonBG->setID("moons-rank-tab"_spr);
             auto moonBGScale = moonBG->getContentSize();
 
             auto moonBorder = CCScale9Sprite::createWithSpriteFrameName("border.png"_spr);
@@ -668,7 +668,7 @@ class $modify(ERProfilePage, ProfilePage) {
             }
 
 
-            moonBG->setScale(0.35f);
+            moonBG->setScale(0.3f);
 
             layer->addChild(moonBG);
         }
@@ -687,11 +687,11 @@ class $modify(ERProfilePage, ProfilePage) {
         }
 
         if (!demonsExists && creatorExists) {
-            creatorBG->setPositionY(layerSize.height * 0.895f);
+            creatorBG->setPositionY(layerSize.height * 0.9f);
         }
 
         if (!globalExists && moonsExists) {
-            moonBG->setPositionY(layerSize.height * 0.895f);
+            moonBG->setPositionY(layerSize.height * 0.9f);
         }
 
         // last moves bc im too lazy lol
