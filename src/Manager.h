@@ -22,12 +22,19 @@ class Manager {
                     str = str.substr(str.find(":") + 1);
                 }
 
-                try {
+                if (str.find(":") != std::string::npos) {
                     int userID = stoi(str.substr(0, str.find(":")));
                     list.push_back(userID);
-                } catch (std::invalid_argument) {
+                } else {
                     break;
                 }
+
+                // try {
+                //     int userID = stoi(str.substr(0, str.find(":")));
+                //     list.push_back(userID);
+                // } catch (std::invalid_argument) {
+                //     break;
+                // }
                 
 
                 isFound = str.find("|");
