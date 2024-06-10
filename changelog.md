@@ -1,3 +1,7 @@
+# v1.1.0.alpha.2
+
+- Made compatible with Geode v3.0.0-alpha.2
+
 # v1.1.0.alpha.1
 
 - Extended all rankings from Top 250 to Top 2500
