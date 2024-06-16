@@ -1,3 +1,8 @@
+# v1.0.0
+
+- Made compatible with Geode v3.0.0-beta.1
+- Switched web requests from post to get
+
 # v1.1.0.alpha.2
 
 - Made compatible with Geode v3.0.0-alpha.2
