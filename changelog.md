@@ -1,4 +1,7 @@
-# v1.0.0
+# v1.2.0
+- Made compatible with GD 2.2074.
+
+# v1.1.0
 
 - Made compatible with Geode v3.0.0-beta.1
 - Switched web requests from post to get
