@@ -675,7 +675,7 @@ class $modify(ERProfilePage, ProfilePage) {
             std::string pointercrateString = "# " + std::to_string(pointercratePosition);
             pointercrateSetValues(pointercratePosition);
             
-            auto pointercrateColor = this->m_fields->m_dColor;
+            auto pointercrateColor = this->m_fields->m_mColor;
             
             pointercrateBG->setContentSize(labelSize);
             pointercrateBG->setZOrder(9);
@@ -693,7 +693,7 @@ class $modify(ERProfilePage, ProfilePage) {
             pointercrateBorder->setScaleX(-1);
             pointercrateBorder->addChild(pointercrateBorder);
             
-            auto pcTitle = CCLabelBMFont::create("Pointercrate Rank:", "gjFont05.fnt");
+            auto pcTitle = CCLabelBMFont::create("Pointercrate:", "gjFont05.fnt");
             pointercrateBG->addChild(pcTitle);
             pcTitle->setScale(0.7f);
             pcTitle->setZOrder(12);
@@ -709,14 +709,14 @@ class $modify(ERProfilePage, ProfilePage) {
             pcRank->setBlendFunc(blending);
             pcRank->setOpacity(255);
 
-            auto pcSprite = this->m_fields->m_dTrophy;
+            auto pcSprite = this->m_fields->m_mTrophy;
             pointercrateBG->addChild(pcSprite);
             pcSprite->setZOrder(12);
             pcSprite->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.5f});
             pcSprite->setScale(1.5f);
             pcSprite->setOpacity(255);
 
-            auto pcParticles = this->m_fields->m_dParticleBase;
+            auto pcParticles = this->m_fields->m_mParticleBase;
             if (pcParticles != nullptr) {
                 pointercrateBG->addChild(pcParticles);
                 pcParticles->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.2f});
@@ -724,7 +724,7 @@ class $modify(ERProfilePage, ProfilePage) {
             }
             
 
-            auto pcParticles2 = this->m_fields->m_dParticleExtra;
+            auto pcParticles2 = this->m_fields->m_mParticleExtra;
             if (pcParticles2 != nullptr) {
                 pointercrateBG->addChild(pcParticles2);
                 pcParticles2->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.5f});
@@ -732,7 +732,7 @@ class $modify(ERProfilePage, ProfilePage) {
             }
             
 
-            auto pcParticles3 = this->m_fields->m_dParticleExtra2;
+            auto pcParticles3 = this->m_fields->m_mParticleExtra2;
             if (pcParticles3 != nullptr) {
                 pointercrateBG->addChild(pcParticles3);
                 pcParticles3->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.6f});
@@ -847,5 +847,6 @@ class $modify(ERProfilePage, ProfilePage) {
         demonBG->setPositionY(demonBG->getPositionY() + offsetY);
         globalBG->setPositionY(globalBG->getPositionY() + offsetY);
         moonBG->setPositionY(moonBG->getPositionY() + offsetY);
+        pointercrateBG->setPositionY(pointercrateBG->getPositionY() + offsetY);
     }
 };
