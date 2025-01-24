@@ -1,3 +1,6 @@
+# v1.3.0
+- Added support for Pointercrate Demon List rankings.
+
 # v1.2.0
 - Made compatible with GD 2.2074.
 

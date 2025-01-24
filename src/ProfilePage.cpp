@@ -837,7 +837,7 @@ class $modify(ERProfilePage, ProfilePage) {
             moonBG->setPositionY(layerSize.height * 0.9f);
         }
 
-        if (!moonsExists && pointercrateExists) {
+        if (!demonsExists && pointercrateExists) {
             pointercrateBG->setPositionY(layerSize.height * 0.9f);
         }
 
