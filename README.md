@@ -12,6 +12,7 @@ This is a mod that introduces one of Zidnes' old fanmades into Geometry Dash--ne
 - Added Creator rankings to Profile Pages (up to Top 2500)!
 - Added Moons rankings to Profile Pages (up to Top 2500)!
 - Added Demons rankings to Profile Pages (up to Top 2500)!
+- Added rankings from the Pointercrate Demon List to Profile Pages (up to Top 2500)!
 - Custom particles on rank trophies!
 
 ## Credits
