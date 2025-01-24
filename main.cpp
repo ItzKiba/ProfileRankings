@@ -12,6 +12,7 @@ class $modify(MenuLayer) {
         EventListener<web::WebTask> m_listener1;
         EventListener<web::WebTask> m_listener2;
         EventListener<web::WebTask> m_listener3;
+        EventListener<web::WebTask> m_listener4;
     };
 
 	bool init() {
@@ -56,6 +57,17 @@ class $modify(MenuLayer) {
 			Manager::parseRequestString(response, Manager::userIDListDemons);
 
         });
+
+		web::AsyncWebRequest()
+        .postRequest()
+        .bodyRaw(fmt::format("type={}", "pointercratePoints"))
+        .fetch("https://clarifygdps.com/gdutils/moreleaderboards.php")
+        .text()
+        .then([this](const std::string& response) {
+
+			Manager::parseRequestString(response, Manager::userIDListPointercrate);
+
+        });
         */
 
         m_fields->m_listener1.bind([] (web::WebTask::Event* e) {
@@ -76,6 +88,12 @@ class $modify(MenuLayer) {
             }
         });
 
+        m_fields->m_listener4.bind([] (web::WebTask::Event* e) {
+            if (web::WebResponse* res = e->getValue()) {
+                Manager::parseRequestString(res->string().unwrapOr("Failed."), Manager::userIDListPointercrate);
+            }
+        });
+
         auto req1 = web::WebRequest();
         req1.param("type", "demons");
         req1.param("count", "2500");
@@ -90,6 +108,12 @@ class $modify(MenuLayer) {
 
         auto req3 = web::WebRequest();
         req3.param("type", "moons");
+        req3.param("count", "2500");
+        req3.bodyString(fmt::format("type={}&count={}", "moons", "2500"));
+        m_fields->m_listener3.setFilter(req3.get("https://clarifygdps.com/gdutils/moreleaderboards.php"));
+
+        auto req4 = web::WebRequest();
+        req3.param("type", "pointercratePoints");
         req3.param("count", "2500");
         req3.bodyString(fmt::format("type={}&count={}", "moons", "2500"));
         m_fields->m_listener3.setFilter(req3.get("https://clarifygdps.com/gdutils/moreleaderboards.php"));
