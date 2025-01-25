@@ -19,3 +19,4 @@ This is a mod that introduces one of Zidnes' old fanmades into Geometry Dash--ne
 
 - Jouca and Firee for the Top 2500 leaderboards endpoints.
 - Zidnes for the original fanmade idea.
+- Patrick61804 for adding Pointercrate rankings to the mod.
