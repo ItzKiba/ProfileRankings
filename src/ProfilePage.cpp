@@ -19,26 +19,31 @@ class $modify(ERProfilePage, ProfilePage) {
         ccColor3B m_gColor = {0, 0, 0};
         ccColor3B m_dColor = {0, 0, 0};
         ccColor3B m_mColor = {0, 0, 0};
+        ccColor3B m_pColor = {0, 0, 0};        
 
         CCSprite* m_cTrophy = nullptr;
         CCSprite* m_gTrophy = nullptr;
         CCSprite* m_dTrophy = nullptr;
         CCSprite* m_mTrophy = nullptr;
+        CCSprite* m_pTrophy = nullptr;        
 
         CCParticleSystem* m_cParticleBase = nullptr;
         CCParticleSystem* m_gParticleBase = nullptr;
         CCParticleSystem* m_dParticleBase = nullptr;
         CCParticleSystem* m_mParticleBase = nullptr;
+        CCParticleSystem* m_pParticleBase = nullptr;
 
         CCParticleSystem* m_cParticleExtra = nullptr;
         CCParticleSystem* m_gParticleExtra = nullptr;
         CCParticleSystem* m_dParticleExtra = nullptr;
         CCParticleSystem* m_mParticleExtra = nullptr;
+        CCParticleSystem* m_pParticleExtra = nullptr;
 
         CCParticleSystem* m_cParticleExtra2 = nullptr;
         CCParticleSystem* m_gParticleExtra2 = nullptr;
         CCParticleSystem* m_dParticleExtra2 = nullptr;
         CCParticleSystem* m_mParticleExtra2 = nullptr;
+        CCParticleSystem* m_pParticleExtra2 = nullptr;        
     };
 
     // FEAST your eyes on this MONSTROSITY, CATTO!!!
@@ -306,65 +311,65 @@ class $modify(ERProfilePage, ProfilePage) {
     void pointercrateSetValues(int pos) {
         ERProfilePage* page = this;
         if (pos > 1500) {
-            page->m_fields->m_mColor = { 10, 10, 10 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_0.png"_spr);
-            page->m_fields->m_mParticleBase = nullptr;
-            page->m_fields->m_mParticleExtra = nullptr;
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 10, 10, 10 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_0.png"_spr);
+            page->m_fields->m_pParticleBase = nullptr;
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 1000) {
-            page->m_fields->m_mColor = { 204, 75, 0 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_1.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 5);
-            page->m_fields->m_mParticleExtra = nullptr;
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 204, 75, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_1.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 5);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 750) {
-            page->m_fields->m_mColor = { 185, 0, 179 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_2.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 6);
-            page->m_fields->m_mParticleExtra = nullptr;
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 185, 0, 179 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_2.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 6);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 500) {
-            page->m_fields->m_mColor = { 26, 160, 255 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_3.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 7);
-            page->m_fields->m_mParticleExtra = nullptr;
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 26, 160, 255 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_3.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 7);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 250) {
-            page->m_fields->m_mColor = { 23, 196, 0 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_4.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 8);
-            page->m_fields->m_mParticleExtra = nullptr;
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 23, 196, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_4.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 8);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 100) {
-            page->m_fields->m_mColor = { 220, 7, 68 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_5.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 9);
-            page->m_fields->m_mParticleExtra = nullptr;
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 220, 7, 68 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_5.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 9);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 50) {
-            page->m_fields->m_mColor = { 255, 157, 0 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_6.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 10);
-            page->m_fields->m_mParticleExtra = Particles::topTrophy0(15);
-            page->m_fields->m_mParticleExtra2 = nullptr;
+            page->m_fields->m_pColor = { 255, 157, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_6.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 10);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(15);
+            page->m_fields->m_pParticleExtra2 = nullptr;
         } else if (pos > 10) {
-            page->m_fields->m_mColor = { 255, 255, 255 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_7.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 11);
-            page->m_fields->m_mParticleExtra = Particles::topTrophy0(20);
-            page->m_fields->m_mParticleExtra2 = Particles::topTrophySparkles(2);
+            page->m_fields->m_pColor = { 255, 255, 255 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_7.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 11);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(20);
+            page->m_fields->m_pParticleExtra2 = Particles::topTrophySparkles(2);
         } else if (pos > 1) {
-            page->m_fields->m_mColor = { 255, 221, 0 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_8.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 12);
-            page->m_fields->m_mParticleExtra = Particles::topTrophy0(25);
-            page->m_fields->m_mParticleExtra2 = Particles::topTrophySparkles(3);
+            page->m_fields->m_pColor = { 255, 221, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_8.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 12);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(25);
+            page->m_fields->m_pParticleExtra2 = Particles::topTrophySparkles(3);
         } else {
-            page->m_fields->m_mColor = { 0, 255, 255 };
-            page->m_fields->m_mTrophy = CCSprite::createWithSpriteFrameName("trophy_9.png"_spr);
-            page->m_fields->m_mParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 13);
-            page->m_fields->m_mParticleExtra = Particles::topTrophy0(30);
-            page->m_fields->m_mParticleExtra2 = Particles::topTrophySparkles(4);
+            page->m_fields->m_pColor = { 0, 255, 255 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_9.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 13);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(30);
+            page->m_fields->m_pParticleExtra2 = Particles::topTrophySparkles(4);
         }
     }
 
@@ -675,7 +680,7 @@ class $modify(ERProfilePage, ProfilePage) {
             std::string pointercrateString = "# " + std::to_string(pointercratePosition);
             pointercrateSetValues(pointercratePosition);
             
-            auto pointercrateColor = this->m_fields->m_dColor;
+            auto pointercrateColor = this->m_fields->m_pColor;
             
             pointercrateBG->setContentSize(labelSize);
             pointercrateBG->setZOrder(9);
@@ -710,14 +715,14 @@ class $modify(ERProfilePage, ProfilePage) {
             pcRank->setBlendFunc(blending);
             pcRank->setOpacity(255);
 
-            auto pcSprite = this->m_fields->m_dTrophy;
+            auto pcSprite = this->m_fields->m_pTrophy;
             pointercrateBG->addChild(pcSprite);
             pcSprite->setZOrder(12);
             pcSprite->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.5f});
             pcSprite->setScale(1.5f);
             pcSprite->setOpacity(255);
 
-            auto pcParticles = this->m_fields->m_dParticleBase;
+            auto pcParticles = this->m_fields->m_pParticleBase;
             if (pcParticles != nullptr) {
                 pointercrateBG->addChild(pcParticles);
                 pcParticles->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.2f});
@@ -725,7 +730,7 @@ class $modify(ERProfilePage, ProfilePage) {
             }
             
 
-            auto pcParticles2 = this->m_fields->m_dParticleExtra;
+            auto pcParticles2 = this->m_fields->m_pParticleExtra;
             if (pcParticles2 != nullptr) {
                 pointercrateBG->addChild(pcParticles2);
                 pcParticles2->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.5f});
@@ -733,18 +738,20 @@ class $modify(ERProfilePage, ProfilePage) {
             }
             
 
-            auto pcParticles3 = this->m_fields->m_dParticleExtra2;
+            auto pcParticles3 = this->m_fields->m_pParticleExtra2;
             if (pcParticles3 != nullptr) {
                 pointercrateBG->addChild(pcParticles3);
                 pcParticles3->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.6f});
                 pcParticles3->setZOrder(20);
             }
             
-            auto pcDM = CCSprite::createWithSpriteFrameName("GJ_demonIcon_001.png");
-            pointercrateBG->addChild(pcDM);
-            pcDM->setZOrder(13);
-            pcDM->setScale(0.55f);
-            pcDM->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.65f});
+            auto pcDM = CCSprite::create("GJ_demonlistIcon_001.png");
+            if (pcDM) {
+                pointercrateBG->addChild(pcDM);
+                pcDM->setZOrder(13);
+                pcDM->setScale(0.55f);
+                pcDM->setPosition({labelSize.width * (1 - 0.19f), labelSize.height * 0.65f});
+            }
 
             pointercrateBG->setScale(0.3f);
             layer->addChild(pointercrateBG);
@@ -842,11 +849,21 @@ class $modify(ERProfilePage, ProfilePage) {
             pointercrateBG->setPositionY(layerSize.height * 0.9f);
         }
 
-        if (demonsExists && pointercrateExists) {
+        if (demonsPosition != -1) {
         float offsetY = -16.6f;
         pointercrateBG->setPositionY(pointercrateBG->getPositionY() + offsetY);
         }
-        
+
+        if (creatorPosition != -1 && pointercratePosition != -1 && demonsPosition == -1) {
+            float offsetY = -16.6f;
+            pointercrateBG->setPositionY(pointercrateBG->getPositionY() + offsetY);
+        }
+
+        if (demonsExists && pointercrateExists && creatorExists) {
+        if (pointercrateBG) {
+        pointercrateBG->setVisible(false);
+        }
+     } 
 
         // last moves bc im too lazy lol
         float offsetY = 1.f;
