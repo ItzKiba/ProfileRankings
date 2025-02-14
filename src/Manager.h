@@ -11,6 +11,7 @@ class Manager {
         inline static std::vector<int> userIDList;
         inline static std::vector<int> userIDListDemons;
         inline static std::vector<int> userIDListMoons;
+        inline static std::vector<int> userIDListPointercrate;
 
         inline static void parseRequestString(std::string str, std::vector<int> &list) {
 
@@ -65,6 +66,15 @@ class Manager {
         inline static int getPositionMoons(int id) {
             for (unsigned int i = 0; i < userIDListMoons.size(); i++) {
                 if (userIDListMoons.at(i) == id) {
+                    return i + 1;
+                }
+            }
+            return -1;
+        }
+
+        inline static int getPositionPointercrate(int id) {
+            for (unsigned int i = 0; i < userIDListPointercrate.size(); i++) {
+                if (userIDListPointercrate.at(i) == id) {
                     return i + 1;
                 }
             }

@@ -19,26 +19,31 @@ class $modify(ERProfilePage, ProfilePage) {
         ccColor3B m_gColor = {0, 0, 0};
         ccColor3B m_dColor = {0, 0, 0};
         ccColor3B m_mColor = {0, 0, 0};
+        ccColor3B m_pColor = {0, 0, 0};        
 
         CCSprite* m_cTrophy = nullptr;
         CCSprite* m_gTrophy = nullptr;
         CCSprite* m_dTrophy = nullptr;
         CCSprite* m_mTrophy = nullptr;
+        CCSprite* m_pTrophy = nullptr;        
 
         CCParticleSystem* m_cParticleBase = nullptr;
         CCParticleSystem* m_gParticleBase = nullptr;
         CCParticleSystem* m_dParticleBase = nullptr;
         CCParticleSystem* m_mParticleBase = nullptr;
+        CCParticleSystem* m_pParticleBase = nullptr;
 
         CCParticleSystem* m_cParticleExtra = nullptr;
         CCParticleSystem* m_gParticleExtra = nullptr;
         CCParticleSystem* m_dParticleExtra = nullptr;
         CCParticleSystem* m_mParticleExtra = nullptr;
+        CCParticleSystem* m_pParticleExtra = nullptr;
 
         CCParticleSystem* m_cParticleExtra2 = nullptr;
         CCParticleSystem* m_gParticleExtra2 = nullptr;
         CCParticleSystem* m_dParticleExtra2 = nullptr;
         CCParticleSystem* m_mParticleExtra2 = nullptr;
+        CCParticleSystem* m_pParticleExtra2 = nullptr;        
     };
 
     // FEAST your eyes on this MONSTROSITY, CATTO!!!
@@ -303,6 +308,70 @@ class $modify(ERProfilePage, ProfilePage) {
         }
     }
 
+    void pointercrateSetValues(int pos) {
+        ERProfilePage* page = this;
+        if (pos > 1500) {
+            page->m_fields->m_pColor = { 10, 10, 10 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_0.png"_spr);
+            page->m_fields->m_pParticleBase = nullptr;
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 1000) {
+            page->m_fields->m_pColor = { 204, 75, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_1.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 5);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 750) {
+            page->m_fields->m_pColor = { 185, 0, 179 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_2.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 6);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 500) {
+            page->m_fields->m_pColor = { 26, 160, 255 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_3.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 7);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 250) {
+            page->m_fields->m_pColor = { 23, 196, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_4.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 8);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 100) {
+            page->m_fields->m_pColor = { 220, 7, 68 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_5.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 9);
+            page->m_fields->m_pParticleExtra = nullptr;
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 50) {
+            page->m_fields->m_pColor = { 255, 157, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_6.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 10);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(15);
+            page->m_fields->m_pParticleExtra2 = nullptr;
+        } else if (pos > 10) {
+            page->m_fields->m_pColor = { 255, 255, 255 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_7.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 11);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(20);
+            page->m_fields->m_pParticleExtra2 = Particles::topTrophySparkles(2);
+        } else if (pos > 1) {
+            page->m_fields->m_pColor = { 255, 221, 0 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_8.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 12);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(25);
+            page->m_fields->m_pParticleExtra2 = Particles::topTrophySparkles(3);
+        } else {
+            page->m_fields->m_pColor = { 0, 255, 255 };
+            page->m_fields->m_pTrophy = CCSprite::createWithSpriteFrameName("trophy_9.png"_spr);
+            page->m_fields->m_pParticleBase = Particles::trophyGeneral(page->m_fields->m_mColor, 13);
+            page->m_fields->m_pParticleExtra = Particles::topTrophy0(30);
+            page->m_fields->m_pParticleExtra2 = Particles::topTrophySparkles(4);
+        }
+    }
 
     void loadPageFromUserInfo(GJUserScore* score) {
         ProfilePage::loadPageFromUserInfo(score);
@@ -311,6 +380,7 @@ class $modify(ERProfilePage, ProfilePage) {
         bool globalExists = false;
         bool moonsExists = false;
         bool demonsExists = false;
+        bool pointercrateExists = false;
 
         if (this->m_mainLayer->getChildByID("global-rank-icon") != nullptr) {
             this->m_mainLayer->getChildByID("global-rank-icon")->setVisible(false);
@@ -351,6 +421,7 @@ class $modify(ERProfilePage, ProfilePage) {
         int creatorPosition = Manager::getPosition(userID);
         int demonsPosition = Manager::getPositionDemons(userID);
         int moonsPosition = Manager::getPositionMoons(userID);
+        int pointercratePosition = Manager::getPositionPointercrate(userID);
 
         // Shrink Floor Line
         auto floorLine = static_cast<CCSprite*>(layer->getChildByID("floor-line"));
@@ -360,6 +431,7 @@ class $modify(ERProfilePage, ProfilePage) {
         auto globalBG = CCScale9Sprite::create("square02_001.png");
         auto demonBG = CCScale9Sprite::create("square02_001.png");
         auto moonBG = CCScale9Sprite::create("square02_001.png");
+        auto pointercrateBG = CCScale9Sprite::create("square02_001.png");
 
         if (creatorPosition != -1) {
             creatorExists = true;
@@ -603,6 +675,88 @@ class $modify(ERProfilePage, ProfilePage) {
 
         }
 
+        if (pointercratePosition != -1) {
+            pointercrateExists = true;
+            std::string pointercrateString = "# " + std::to_string(pointercratePosition);
+            pointercrateSetValues(pointercratePosition);
+            
+            auto pointercrateColor = this->m_fields->m_pColor;
+            
+            pointercrateBG->setContentSize(labelSize);
+            pointercrateBG->setZOrder(9);
+            pointercrateBG->setPosition({rightLabelX, layerSize.height * 0.9f});
+            pointercrateBG->setOpacity(60);
+            pointercrateBG->setID("pointercrate-rank-tab"_spr);
+            auto pointercrateBGScale = pointercrateBG->getContentSize();
+
+            auto pointercrateBorder = CCScale9Sprite::createWithSpriteFrameName("border.png"_spr);
+            pointercrateBorder->setContentSize(labelSize);
+            pointercrateBorder->setZOrder(10);
+            pointercrateBorder->setPosition(pointercrateBGScale / 2);
+            pointercrateBorder->setOpacity(200);
+            pointercrateBorder->setColor(pointercrateColor);
+            pointercrateBorder->setScaleX(-1);
+            pointercrateBG->addChild(pointercrateBorder);
+
+            
+            auto pcTitle = CCLabelBMFont::create("Pointercrate:", "gjFont05.fnt");
+            pointercrateBG->addChild(pcTitle);
+            pcTitle->setScale(0.7f);
+            pcTitle->setZOrder(12);
+            pcTitle->setPosition({labelSize.width * (1-0.655f), labelSize.height * 0.69f});
+            pcTitle->setBlendFunc(blending);
+            pcTitle->setOpacity(255);
+
+            auto pcRank = CCLabelBMFont::create(pointercrateString.c_str(), "gjFont05.fnt");
+            pointercrateBG->addChild(pcRank);
+            pcRank->setScale(0.7f);
+            pcRank->setZOrder(12);
+            pcRank->setPosition({labelSize.width * (1-0.655f), labelSize.height * 0.26f});
+            pcRank->setBlendFunc(blending);
+            pcRank->setOpacity(255);
+
+            auto pcSprite = this->m_fields->m_pTrophy;
+            pointercrateBG->addChild(pcSprite);
+            pcSprite->setZOrder(12);
+            pcSprite->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.5f});
+            pcSprite->setScale(1.5f);
+            pcSprite->setOpacity(255);
+
+            auto pcParticles = this->m_fields->m_pParticleBase;
+            if (pcParticles != nullptr) {
+                pointercrateBG->addChild(pcParticles);
+                pcParticles->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.2f});
+                pcParticles->setZOrder(20);
+            }
+            
+
+            auto pcParticles2 = this->m_fields->m_pParticleExtra;
+            if (pcParticles2 != nullptr) {
+                pointercrateBG->addChild(pcParticles2);
+                pcParticles2->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.5f});
+                pcParticles2->setZOrder(11);
+            }
+            
+
+            auto pcParticles3 = this->m_fields->m_pParticleExtra2;
+            if (pcParticles3 != nullptr) {
+                pointercrateBG->addChild(pcParticles3);
+                pcParticles3->setPosition({labelSize.width * (1-0.19f), labelSize.height * 0.6f});
+                pcParticles3->setZOrder(20);
+            }
+            
+            auto pcDM = CCSprite::createWithSpriteFrameName("GJ_demonlistIcon_001.png"_spr);
+            if (pcDM) {
+                pointercrateBG->addChild(pcDM);
+                pcDM->setZOrder(13);
+                pcDM->setScale(0.55f);
+                pcDM->setPosition({labelSize.width * (1 - 0.19f), labelSize.height * 0.65f});
+            }
+
+            pointercrateBG->setScale(0.3f);
+            layer->addChild(pointercrateBG);
+
+        }
 
         if (moonsPosition > 0) {
             moonsExists = true;
@@ -690,6 +844,26 @@ class $modify(ERProfilePage, ProfilePage) {
         if (!globalExists && moonsExists) {
             moonBG->setPositionY(layerSize.height * 0.9f);
         }
+
+        if (!moonsExists && pointercrateExists) {
+            pointercrateBG->setPositionY(layerSize.height * 0.9f);
+        }
+
+        if (demonsPosition != -1) {
+        float offsetY = -16.6f;
+        pointercrateBG->setPositionY(pointercrateBG->getPositionY() + offsetY);
+        }
+
+        if (creatorPosition != -1 && pointercratePosition != -1 && demonsPosition == -1) {
+            float offsetY = -16.6f;
+            pointercrateBG->setPositionY(pointercrateBG->getPositionY() + offsetY);
+        }
+
+        if (demonsExists && pointercrateExists && creatorExists) {
+        if (pointercrateBG) {
+        pointercrateBG->setVisible(false);
+        }
+     } 
 
         // last moves bc im too lazy lol
         float offsetY = 1.f;
