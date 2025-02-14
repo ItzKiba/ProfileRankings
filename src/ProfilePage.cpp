@@ -745,7 +745,7 @@ class $modify(ERProfilePage, ProfilePage) {
                 pcParticles3->setZOrder(20);
             }
             
-            auto pcDM = CCSprite::create("GJ_demonlistIcon_001.png");
+            auto pcDM = CCSprite::createWithSpriteFrameName("GJ_demonlistIcon_001.png"_spr);
             if (pcDM) {
                 pointercrateBG->addChild(pcDM);
                 pcDM->setZOrder(13);

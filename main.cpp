@@ -113,10 +113,10 @@ class $modify(MenuLayer) {
         m_fields->m_listener3.setFilter(req3.get("https://clarifygdps.com/gdutils/moreleaderboards.php"));
 
         auto req4 = web::WebRequest();
-        req3.param("type", "pointercratePoints");
-        req3.param("count", "2500");
-        req3.bodyString(fmt::format("type={}&count={}", "moons", "2500"));
-        m_fields->m_listener3.setFilter(req3.get("https://clarifygdps.com/gdutils/moreleaderboards.php"));
+        req4.param("type", "pointercratePoints");
+        req4.param("count", "2500");
+        req4.bodyString(fmt::format("type={}&count={}", "moons", "2500"));
+        m_fields->m_listener4.setFilter(req4.get("https://clarifygdps.com/gdutils/moreleaderboards.php"));
         
 		return true;
 	}
