@@ -24,6 +24,7 @@ class $modify(MenuLayer) {
 			return true;
 		}
 
+		// The following provides the format used for web requests with the GDUtils API
         /*
 		web::AsyncWebRequest()
         .postRequest()
