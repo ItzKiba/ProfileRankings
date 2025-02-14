@@ -9,14 +9,10 @@
   "id": "itzkiba.elegant_rankings",
   "name": "Profile Rankings",
   "developer": "ItzKiba",
-  "description": "Adds various rankings to profile pages and makes rankings look nicer.",
-  "dependencies": [
-    {
-      "id": "geode.node-ids",
-      "version": ">=v1.19.0",
-      "importance": "required"
-    }
-  ],
+  "description": "Adds nicer looking rankings to profile pages.",
+  "dependencies": {
+      "geode.node-ids": "1.19.0"
+  },
   "resources": {
     "spritesheets": {
       "ER_SpriteSheet": ["resources/*.png"]
