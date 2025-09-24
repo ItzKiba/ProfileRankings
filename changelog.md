@@ -1,3 +1,6 @@
+# v1.2.1
+- Fix with new GD Utils servers
+
 # v1.2.0
 - Made compatible with GD 2.2074.
 
